@@ -71,7 +71,9 @@ class Random
      */
     static function makeUUIDV4()
     {
-        mt_srand((double)microtime() * 10000);
+//        mt_srand((double)microtime() * 10000);
+        mt_srand((int)(microtime(true) * 1000));
+
         $charid = strtolower(md5(uniqid(rand(), true)));
         $hyphen = '-';
         $uuidV4 =
